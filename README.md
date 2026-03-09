@@ -1,0 +1,1 @@
+# hirodai-syllabus-2026
