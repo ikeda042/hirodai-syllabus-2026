@@ -5,6 +5,9 @@ from fastapi import FastAPI, HTTPException
 from data import COURSE_DATA
 
 
+COURSE_CODES = sorted(COURSE_DATA)
+
+
 app = FastAPI(
     title="Hirodai Syllabus API",
     description="講義コードから広島大学シラバス情報を取得する API",
@@ -33,6 +36,11 @@ def read_root() -> dict[str, Any]:
 @app.get("/api/health")
 def healthcheck() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/api/course-codes")
+def read_course_codes() -> dict[str, Any]:
+    return {"count": len(COURSE_CODES), "course_codes": COURSE_CODES}
 
 
 @app.get("/api/courses/{course_code}")

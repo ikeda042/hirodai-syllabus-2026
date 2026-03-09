@@ -7,11 +7,13 @@ FastAPI で講義コードからシラバス情報を返す API です。
 - `GET /`
 - `GET /docs`
 - `GET /api/health`
+- `GET /api/course-codes`
 - `GET /api/courses/{course_code}`
 
 例:
 
 ```bash
+curl http://127.0.0.1:8000/api/course-codes
 curl http://127.0.0.1:8000/api/courses/WA000101
 ```
 
